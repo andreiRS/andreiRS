@@ -4,60 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razvan Andrei Surdu's Personal Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.7/flowbite.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.7/flowbite.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-gray-200 font-sans">
-    <header class="bg-gray-800 py-6">
-        <h1 class="text-3xl font-bold text-center">Razvan Andrei Surdu</h1>
+<body class="bg-gray-900 text-gray-200">
+    <header class="bg-gray-800 shadow-lg">
+        <nav class="border-gray-700 px-4 lg:px-6 py-4">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="#" class="flex items-center">
+                    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Razvan Andrei Surdu</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="https://t.me/razvan_andrei_surdu" target="_blank" rel="noopener noreferrer" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Contact Me</a>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main class="flex flex-col items-center mt-8">
-        <section class="bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 mb-10">
-            <h2 class="text-2xl font-bold mb-4 text-center">About Me</h2>
-            <p class="text-base text-gray-400 text-center">I am a seasoned technology leader with over 10 years of experience in software development, product management, and leading high-performing teams. Passionate about building great products, fostering team collaboration, and leveraging technology to make a positive impact.</p>
-        </section>
-        <img class="w-32 h-32 rounded-full border-4 border-gray-600 mb-6" src="razvan-andrei-surdu-sq-min.png" alt="Profile Image">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2">
-            <p class="text-xl mb-4 text-center">👨‍💻 Senior Product Manager with 10+ years of experience in tech leadership</p>
-            <p class="text-xl mb-4 text-center">🎮 Leading multidisciplinary teams to build mobile games with millions of users</p>
-            <p class="text-xl mb-4 text-center">📱 Ironman Finisher & Amateur Athlete 🏊‍♂️🚴‍♂️🏃‍♂️</p>
-            <p class="text-xl text-center">💻 Tech & AI Enthusiast 🤖</p>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col items-center mb-32">
+            <img class="w-36 h-36 p-1 rounded-full ring-2 ring-gray-600" src="razvan-andrei-sq-surdu-sq-min.png" alt="Razvan Andrei Surdu">
+            <div class="mt-6 max-w-2xl text-center">
+                <p class="mb-4 text-xl font-bold">👨‍💻 Senior Product Manager with 10+ years of experience in tech leadership</p>
+                <p class="mb-4 text-lg">🎮 Leading multidisciplinary teams to build mobile games with millions of users</p>
+                <p class="mb-4 text-lg">📱 Ironman Finisher & Amateur Athlete 🏊‍♂️🚴‍♂️🏃‍♂️</p>
+                <p class="text-lg">💻 Tech & AI Enthusiast 🤖</p>
+            </div>
         </div>
-        <button type="button" class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none">Contact Me</button>
-        
-        <section class="bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 mt-10">
-            <h2 class="text-2xl font-bold mb-6 text-center">Experience Timeline</h2>
+
+        <section class="bg-gray-800 rounded-lg shadow-lg max-w-4xl mx-auto mb-12 p-6">
+            <h2 class="text-2xl font-bold mb-6 text-center text-white">Experience Timeline</h2>
             <ol class="relative border-l border-gray-700">
                 <li class="mb-10 ml-6">
-                    <div class="absolute w-3 h-3 bg-blue-700 rounded-full -left-1.5 border border-gray-900"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-500">March 2021 - Present</time>
-                    <h3 class="text-lg font-semibold text-gray-200">Senior Product Manager, InnoGames GmbH</h3>
-                    <p class="text-base font-normal text-gray-400">Leading multidisciplinary development teams to build mobile games, managing product P+L, and ensuring strategic alignment.</p>
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-800 dark:bg-blue-900">
+                        <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        </svg>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-semibold text-white">Senior Product Manager, InnoGames GmbH</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">March 2021 - Present</time>
+                    <p class="mb-4 text-base font-normal text-gray-400">Leading multidisciplinary development teams to build mobile games, managing product P+L, and ensuring strategic alignment.</p>
                 </li>
                 <li class="mb-10 ml-6">
-                    <div class="absolute w-3 h-3 bg-blue-700 rounded-full -left-1.5 border border-gray-900"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-500">July 2016 - March 2021</time>
-                    <h3 class="text-lg font-semibold text-gray-200">Technical Product Lead, InnoGames GmbH</h3>
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-800 dark:bg-blue-900">
+                        <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        </svg>
+                    </span>
+                    <h3 class="mb-1 text-lg font-semibold text-white">Technical Product Lead, InnoGames GmbH</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">July 2016 - March 2021</time>
                     <p class="text-base font-normal text-gray-400">Defined tech strategies, led agile teams, and grew products from concept to live mode, generating multi-million revenue.</p>
                 </li>
                 <li class="mb-10 ml-6">
-                    <div class="absolute w-3 h-3 bg-blue-700 rounded-full -left-1.5 border border-gray-900"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-500">April 2015 - July 2016</time>
-                    <h3 class="text-lg font-semibold text-gray-200">Software Development Team Lead, InnoGames GmbH</h3>
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-800 dark:bg-blue-900">
+                        <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        </svg>
+                    </span>
+                    <h3 class="mb-1 text-lg font-semibold text-white">Software Development Team Lead, InnoGames GmbH</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">April 2015 - July 2016</time>
                     <p class="text-base font-normal text-gray-400">Led a team of developers, implemented engineering processes, and ensured quality and timely delivery.</p>
                 </li>
-                <li class="mb-10 ml-6">
-                    <div class="absolute w-3 h-3 bg-blue-700 rounded-full -left-1.5 border border-gray-900"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-gray-500">April 2013 - April 2015</time>
-                    <h3 class="text-lg font-semibold text-gray-200">Game Developer, InnoGames GmbH</h3>
+                <li class="ml-6">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-800 dark:bg-blue-900">
+                        <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        </svg>
+                    </span>
+                    <h3 class="mb-1 text-lg font-semibold text-white">Game Developer, InnoGames GmbH</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">April 2013 - April 2015</time>
                     <p class="text-base font-normal text-gray-400">Worked on game development, contributing to both backend and frontend systems.</p>
                 </li>
             </ol>
         </section>
     </main>
-    <footer class="bg-gray-800 py-4 mt-8">
-        <p class="text-center">&copy; 2024 Razvan Andrei Surdu</p>
+
+    <footer class="bg-gray-800 shadow-lg mt-8">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-400 sm:text-center">&copy; 2024 Razvan Andrei Surdu. All Rights Reserved.</span>
+            <div class="flex mt-4 sm:justify-center md:mt-0">
+                <a href="https://t.me/razvan_andrei_surdu" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+                    <!-- Heroicon for message -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.75a7.5 7.5 0 01-13.5 4.098L3 18l1.098-4.598A7.5 7.5 0 1119.5 7.5H21z" />
+                    </svg>
+                    <span class="sr-only">Telegram account</span>
+                </a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
