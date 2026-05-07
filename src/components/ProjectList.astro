@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from './SectionHeading.astro';
+import ProjectRow from './ProjectRow.astro';
+
+const projects = await getCollection('projects');
+
+projects.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+---
+
+<section class="py-10">
+  <SectionHeading
+    id="projects"
+    title="Projects & experiments"
+    subtitle="A running list of things I've built and shipped, in mobile games and on the side."
+  />
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {
+      projects.map((p) => (
+        <ProjectRow
+          title={p.data.title}
+          year={p.data.year}
+          kind={p.data.kind}
+          status={p.data.status}
+          description={p.data.description}
+          links={p.data.links}
+        />
+      ))
+    }
+  </div>
+</section>

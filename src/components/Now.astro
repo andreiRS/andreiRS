@@ -1,0 +1,44 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+// Edit these bullets quarterly. Each bullet is a snapshot of current focus.
+const items = [
+  {
+    label: 'Working on',
+    text: 'Senior Product Manager at InnoGames, leading a mobile games team.',
+  },
+  {
+    label: 'Building',
+    text: 'Small AI experiments and tools on the side. Currently iterating on Periscope.',
+  },
+  {
+    label: 'Learning',
+    text: 'How to apply LLM agents to product work without losing taste.',
+  },
+];
+
+const lastUpdated = '2026-05';
+---
+
+<section class="py-10">
+  <SectionHeading
+    id="now"
+    title="Now"
+    subtitle={`What I'm focused on, as of ${lastUpdated}.`}
+  />
+  <ul class="space-y-3">
+    {
+      items.map((item) => (
+        <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+          <span class="text-sm uppercase tracking-wide text-slate-500 sm:w-28 shrink-0">
+            {item.label}
+          </span>
+          <span class="text-slate-200">{item.text}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-4 text-sm text-slate-500">
+    Inspired by <a href="https://nownownow.com/about" class="underline hover:text-slate-300">the /now page movement</a>.
+  </p>
+</section>

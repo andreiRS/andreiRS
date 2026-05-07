@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('writing', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const formatter = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base title={`${entry.data.title} — Razvan Andrei Surdu`} description={entry.data.description}>
+  <Header />
+  <main class="mx-auto max-w-2xl px-6 pt-8 pb-12">
+    <article>
+      <header class="mb-8">
+        <time
+          datetime={entry.data.date.toISOString()}
+          class="text-sm text-slate-500 font-mono"
+        >
+          {formatter.format(entry.data.date)}
+        </time>
+        <h1 class="mt-2 text-3xl font-bold text-white tracking-tight">{entry.data.title}</h1>
+        {entry.data.description && (
+          <p class="mt-3 text-slate-400">{entry.data.description}</p>
+        )}
+      </header>
+      <div
+        class="prose prose-invert max-w-none text-slate-300 leading-relaxed [&_a]:text-yellow-400 [&_a:hover]:text-yellow-300 [&_h2]:text-white [&_h2]:font-semibold [&_h2]:text-2xl [&_h2]:mt-8 [&_h3]:text-white [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:mt-6 [&_p]:my-4 [&_code]:bg-slate-800 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_pre]:bg-slate-800 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6"
+      >
+        <Content />
+      </div>
+    </article>
+
+    <p class="mt-12">
+      <a href="/writing" class="text-slate-400 hover:text-white">← Back to writing</a>
+    </p>
+  </main>
+  <Footer />
+</Base>

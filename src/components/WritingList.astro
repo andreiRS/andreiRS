@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  limit?: number;
+  showHeading?: boolean;
+}
+
+const { limit, showHeading = true } = Astro.props;
+
+const all = await getCollection('writing', ({ data }) => !data.draft);
+all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const entries = limit ? all.slice(0, limit) : all;
+
+const formatter = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<section class="py-10">
+  {
+    showHeading && (
+      <SectionHeading
+        id="writing"
+        title="Writing & notes"
+        subtitle="Curated essays and build notes. Raw study notes live in my digital library."
+      />
+    )
+  }
+
+  {
+    entries.length === 0 ? (
+      <div class="rounded-lg border border-slate-800 bg-slate-800/40 p-6 text-slate-400">
+        <p class="text-slate-300 font-medium">Writing coming soon.</p>
+        <p class="mt-2 text-sm">
+          For raw study notes and reading, see my{' '}
+          <a
+            href="https://razvan-andrei-surdu.eu/"
+            class="text-yellow-400 hover:text-yellow-300 underline underline-offset-4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            digital library ↗
+          </a>
+          .
+        </p>
+      </div>
+    ) : (
+      <ul class="divide-y divide-slate-800">
+        {entries.map((entry) => (
+          <li class="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+            <time
+              datetime={entry.data.date.toISOString()}
+              class="text-sm text-slate-500 sm:w-32 shrink-0 font-mono"
+            >
+              {formatter.format(entry.data.date)}
+            </time>
+            <a
+              href={`/writing/${entry.id}`}
+              class="text-slate-200 hover:text-white transition-colors"
+            >
+              {entry.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
