@@ -1,0 +1,44 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+// Edit these bullets quarterly. Each bullet is a snapshot of current focus.
+const items = [
+  {
+    label: 'Working on',
+    text: 'Shipping features for <a href="https://www.innogames.com/games/forge-of-empires/" class="underline decoration-slate-600 hover:decoration-slate-300" target="_blank" rel="noopener noreferrer">Forge of Empires</a> at InnoGames.',
+  },
+  {
+    label: 'Building',
+    text: '<a href="https://periscope.surdu.de/" class="underline decoration-slate-600 hover:decoration-slate-300" target="_blank" rel="noopener noreferrer">Periscope</a>, an LLM visibility audit for SaaS teams. Plus a steady drip of small AI experiments on the side.',
+  },
+  {
+    label: 'Learning',
+    text: "How to get picked up in AI answers. Call it Answer Engine Optimization, or SEO's next chapter.",
+  },
+];
+
+const lastUpdated = '2026-05';
+---
+
+<section class="py-10">
+  <SectionHeading
+    id="now"
+    title="Now"
+    subtitle={`What I'm focused on, as of ${lastUpdated}.`}
+  />
+  <ul class="space-y-3">
+    {
+      items.map((item) => (
+        <li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+          <span class="text-sm uppercase tracking-wide text-slate-500 sm:w-28 shrink-0">
+            {item.label}
+          </span>
+          <span class="text-slate-200" set:html={item.text} />
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-4 text-sm text-slate-500">
+    Inspired by <a href="https://nownownow.com/about" class="underline hover:text-slate-300">the /now page movement</a>.
+  </p>
+</section>

@@ -1,0 +1,20 @@
+---
+const chips = [
+  '14 years in product & engineering',
+  'Shipped products used by millions',
+  'Engineer turned product manager',
+  'Ironman finisher',
+];
+---
+
+<section class="py-6">
+  <ul class="flex flex-wrap justify-center gap-2 sm:gap-3 text-sm">
+    {
+      chips.map((chip) => (
+        <li class="px-3 py-1.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+          {chip}
+        </li>
+      ))
+    }
+  </ul>
+</section>

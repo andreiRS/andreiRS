@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ProofStrip from '../components/ProofStrip.astro';
+import Now from '../components/Now.astro';
+import ProjectList from '../components/ProjectList.astro';
+import WritingList from '../components/WritingList.astro';
+import OpenTo from '../components/OpenTo.astro';
+import About from '../components/About.astro';
+import Elsewhere from '../components/Elsewhere.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="Razvan Andrei Surdu"
+  description="I build digital products that put recent AI advancements to work on real, urgent problems. Senior PM, builder, Ironman finisher."
+>
+  <Header />
+  <main class="mx-auto max-w-3xl px-6">
+    <Hero />
+    <ProofStrip />
+    <Now />
+    <ProjectList />
+    <WritingList limit={5} />
+    <OpenTo />
+    <About />
+    <Elsewhere />
+  </main>
+  <Footer />
+</Base>

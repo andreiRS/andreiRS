@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from './SectionHeading.astro';
+import ProjectRow from './ProjectRow.astro';
+
+interface Props {
+  limit?: number;
+  showViewAll?: boolean;
+  heading?: boolean;
+}
+
+const { limit, showViewAll = false, heading = true } = Astro.props;
+
+const all = await getCollection('projects');
+all.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+const projects = limit ? all.slice(0, limit) : all;
+---
+
+<section class="py-10">
+  {
+    heading && (
+      <SectionHeading
+        id="projects"
+        title="Projects & experiments"
+        subtitle="A running list of things I've built and shipped, at InnoGames and on the side."
+      />
+    )
+  }
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {
+      projects.map((p) => (
+        <ProjectRow
+          title={p.data.title}
+          year={p.data.year}
+          kind={p.data.kind}
+          status={p.data.status}
+          description={p.data.description}
+          links={p.data.links}
+        />
+      ))
+    }
+  </div>
+  {
+    showViewAll && (
+      <div class="mt-6">
+        <a
+          href="/projects"
+          class="text-sm text-yellow-400 hover:text-yellow-300"
+        >
+          View all projects →
+        </a>
+      </div>
+    )
+  }
+</section>

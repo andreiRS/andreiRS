@@ -1,0 +1,37 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const links = [
+  { label: 'Email', url: 'mailto:andrei@surdu.de' },
+  { label: 'GitHub', url: 'https://github.com/andreiRS' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/razvan-andrei-surdu/' },
+  { label: 'Digital library', url: 'https://razvan-andrei-surdu.eu/' },
+  { label: 'Periscope', url: 'https://periscope.surdu.de/' },
+];
+---
+
+<section class="py-10">
+  <SectionHeading id="elsewhere" title="Elsewhere" />
+  <ul class="flex flex-wrap gap-x-6 gap-y-2 text-slate-300">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            class="hover:text-white underline underline-offset-4 decoration-slate-700 hover:decoration-slate-400 transition-colors"
+            target={link.url.startsWith('mailto:') ? undefined : '_blank'}
+            rel={link.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-5 text-slate-400 max-w-2xl">
+    Best way to reach me: <a
+      href="mailto:andrei@surdu.de"
+      class="text-yellow-400 hover:text-yellow-300 underline underline-offset-4">email</a
+    >. Tell me what you're building or what you're curious about.
+  </p>
+</section>

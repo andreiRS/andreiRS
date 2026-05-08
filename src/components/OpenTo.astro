@@ -1,0 +1,28 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const items = [
+  'Building digital products that use AI to solve real, urgent problems.',
+  'Always happy to swap notes on product, games, AI, and endurance training.',
+];
+---
+
+<section class="py-10">
+  <SectionHeading id="open-to" title="Open to" />
+  <ul class="space-y-2 text-slate-200">
+    {
+      items.map((item) => (
+        <li class="flex gap-3">
+          <span class="text-yellow-400 mt-1.5 select-none">•</span>
+          <span>{item}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-5 text-slate-400">
+    If any of that fits what you're working on, <a
+      href="mailto:andrei@surdu.de"
+      class="text-yellow-400 hover:text-yellow-300 underline underline-offset-4">send me a note</a
+    >.
+  </p>
+</section>
