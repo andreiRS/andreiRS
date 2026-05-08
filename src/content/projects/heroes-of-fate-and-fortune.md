@@ -1,7 +1,7 @@
 ---
 title: Heroes of Fate and Fortune
-year: 2019
+year: 2021
 status: archived
 kind: innogames
-description: Mobile RPG project at InnoGames. Year and status TBD.
+description: Exploration game blending squad battles with city building, where you uncover a fantasy world and grow a stronghold from the riches you find. Discontinued in 2022.
 ---

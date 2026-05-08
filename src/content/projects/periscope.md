@@ -1,9 +1,9 @@
 ---
 title: Periscope
-year: 2025
+year: 2026
 status: live
 kind: side
-description: A small experiment, hosted at periscope.surdu.de.
+description: Find out which competitors AI assistants recommend instead of you, and what to fix. Flat-fee audit for SaaS founders.
 links:
   - label: Live
     url: https://periscope.surdu.de/

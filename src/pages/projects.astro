@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectList from '../components/ProjectList.astro';
+---
+
+<Base
+  title="Projects · Razvan Andrei Surdu"
+  description="Things I've built and shipped, at InnoGames and on the side."
+>
+  <Header />
+  <main class="mx-auto max-w-3xl px-6 pt-10">
+    <header class="mb-8">
+      <h1 class="text-2xl font-semibold text-white">Projects & experiments</h1>
+      <p class="mt-2 text-slate-400">
+        A running list of things I've built and shipped, at InnoGames and on the side.
+      </p>
+    </header>
+    <ProjectList heading={false} />
+    <p class="mt-10 text-sm text-slate-500">
+      <a href="/" class="hover:text-slate-300">← Back home</a>
+    </p>
+  </main>
+  <Footer />
+</Base>

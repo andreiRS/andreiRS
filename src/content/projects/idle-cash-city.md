@@ -1,7 +1,7 @@
 ---
 title: Idle Cash City
-year: 2023
-status: live
+year: 2020
+status: archived
 kind: innogames
-description: Idle city-builder mobile game at InnoGames.
+description: Cheerful idle city-builder where players grow from a corner cart into a tycoon's metropolis. Discontinued end of 2020.
 ---
