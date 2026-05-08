@@ -7,4 +7,6 @@ description: Strategy city-builder where you guide a civilization across history
 links:
   - label: Play
     url: https://en.forgeofempires.com/
+  - label: InnoGames page
+    url: https://www.innogames.com/games/forge-of-empires/
 ---
