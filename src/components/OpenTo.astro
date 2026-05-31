@@ -9,20 +9,20 @@ const items = [
 
 <section class="py-10">
   <SectionHeading id="open-to" title="Open to" />
-  <ul class="space-y-2 text-slate-200">
+  <ul class="space-y-2 text-fg">
     {
       items.map((item) => (
         <li class="flex gap-3">
-          <span class="text-yellow-400 mt-1.5 select-none">•</span>
+          <span class="text-highlight mt-1.5 select-none">•</span>
           <span>{item}</span>
         </li>
       ))
     }
   </ul>
-  <p class="mt-5 text-slate-400">
+  <p class="mt-5 text-fg-dim">
     If any of that fits what you're working on, <a
       href="mailto:andrei@surdu.de"
-      class="text-yellow-400 hover:text-yellow-300 underline underline-offset-4">send me a note</a
+      class="text-highlight hover:opacity-80 underline underline-offset-4">send me a note</a
     >.
   </p>
 </section>

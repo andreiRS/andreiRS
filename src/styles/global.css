@@ -1,8 +1,74 @@
 @import "tailwindcss";
 
+:root {
+  /* Dark mode (default) */
+  --bg: #1e1e1e;
+  --surface: #252525;
+  --border: #333333;
+  --fg: #ffffff;
+  --fg-muted: #c4c4c4;
+  --fg-dim: #9a9a9a;
+  --fg-faint: #707070;
+
+  /* Semantic — same role in both modes */
+  --success: #4caf7d; /* green  — done / confirm */
+  --info: #6b9bd2; /* blue   — link / neutral action */
+  --danger: #e05c4b; /* red    — error / warning / destructive */
+  --highlight: #c9970a; /* gold   — callout / accent */
+}
+
+/* Explicit light mode (toggle). Dark is the :root default, so no [data-theme="dark"] block needed. */
+[data-theme="light"] {
+  --bg: #f5f0e8;
+  --surface: #ede8df;
+  --border: #ccc6bb;
+  --fg: #1a1a1a;
+  --fg-muted: #44403a;
+  --fg-dim: #6b655c;
+  --fg-faint: #8c857a;
+
+  --success: #3a8c63;
+  --info: #4f7cb0;
+  --danger: #c0432f;
+  --highlight: #a87c08;
+}
+
+/* "System" mode (no [data-theme] attribute) follows the OS preference. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #f5f0e8;
+    --surface: #ede8df;
+    --border: #ccc6bb;
+    --fg: #1a1a1a;
+    --fg-muted: #44403a;
+    --fg-dim: #6b655c;
+    --fg-faint: #8c857a;
+
+    --success: #3a8c63;
+    --info: #4f7cb0;
+    --danger: #c0432f;
+    --highlight: #a87c08;
+  }
+}
+
 @theme {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Menlo", "Consolas",
+    monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-dim: var(--fg-dim);
+  --color-fg-faint: var(--fg-faint);
+
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-danger: var(--danger);
+  --color-highlight: var(--highlight);
 }
 
 html {
@@ -10,6 +76,6 @@ html {
 }
 
 body {
-  background-color: #0f172a; /* slate-900 */
-  color: #e2e8f0; /* slate-200 */
+  background-color: var(--bg);
+  color: var(--fg-muted);
 }

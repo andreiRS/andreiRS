@@ -22,32 +22,32 @@ const kindLabel = {
 }[kind];
 
 const statusColor = {
-  live: 'text-emerald-400',
-  building: 'text-yellow-400',
-  archived: 'text-slate-500',
-  experiment: 'text-sky-400',
-  tbd: 'text-slate-500',
+  live: 'text-success',
+  building: 'text-highlight',
+  archived: 'text-fg-faint',
+  experiment: 'text-info',
+  tbd: 'text-fg-faint',
 }[status];
 
 const statusDot = {
-  live: 'bg-emerald-400',
-  building: 'bg-yellow-400',
-  archived: 'bg-slate-500',
-  experiment: 'bg-sky-400',
-  tbd: 'bg-slate-600',
+  live: 'bg-success',
+  building: 'bg-highlight',
+  archived: 'bg-fg-faint',
+  experiment: 'bg-info',
+  tbd: 'bg-fg-faint',
 }[status];
 
 const primaryLink = links[0];
 ---
 
-<article class="rounded-lg border border-slate-800 bg-slate-900/40 p-4 flex flex-col gap-2">
+<article class="rounded-lg border border-border bg-bg/40 p-4 flex flex-col gap-2">
   <div class="flex items-baseline justify-between gap-3">
-    <h3 class="text-base font-medium text-white truncate">{title}</h3>
-    {year && <span class="text-xs font-mono text-slate-500 shrink-0">'{year.toString().slice(-2)}</span>}
+    <h3 class="text-base font-medium text-fg truncate">{title}</h3>
+    {year && <span class="text-xs font-mono text-fg-faint shrink-0">'{year.toString().slice(-2)}</span>}
   </div>
-  <p class="text-sm text-slate-400 line-clamp-2">{description}</p>
-  <div class="mt-auto flex items-center gap-3 text-xs text-slate-500">
-    <span class="rounded bg-slate-800/80 px-1.5 py-0.5 text-slate-300">{kindLabel}</span>
+  <p class="text-sm text-fg-dim line-clamp-2">{description}</p>
+  <div class="mt-auto flex items-center gap-3 text-xs text-fg-faint">
+    <span class="rounded bg-surface/80 px-1.5 py-0.5 text-fg-muted">{kindLabel}</span>
     <span class="flex items-center gap-1.5">
       <span class={`inline-block h-1.5 w-1.5 rounded-full ${statusDot}`}></span>
       <span class={statusColor}>{status}</span>
@@ -56,7 +56,7 @@ const primaryLink = links[0];
       primaryLink && (
         <a
           href={primaryLink.url}
-          class="ml-auto text-yellow-400 hover:text-yellow-300"
+          class="ml-auto text-highlight hover:opacity-80"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={primaryLink.label}

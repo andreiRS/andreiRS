@@ -12,13 +12,13 @@ const links = [
 
 <section class="py-10">
   <SectionHeading id="elsewhere" title="Elsewhere" />
-  <ul class="flex flex-wrap gap-x-6 gap-y-2 text-slate-300">
+  <ul class="flex flex-wrap gap-x-6 gap-y-2 text-fg-muted">
     {
       links.map((link) => (
         <li>
           <a
             href={link.url}
-            class="hover:text-white underline underline-offset-4 decoration-slate-700 hover:decoration-slate-400 transition-colors"
+            class="hover:text-fg underline underline-offset-4 decoration-border hover:decoration-fg-dim transition-colors"
             target={link.url.startsWith('mailto:') ? undefined : '_blank'}
             rel={link.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
           >
@@ -28,10 +28,10 @@ const links = [
       ))
     }
   </ul>
-  <p class="mt-5 text-slate-400 max-w-2xl">
+  <p class="mt-5 text-fg-dim max-w-2xl">
     Best way to reach me: <a
       href="mailto:andrei@surdu.de"
-      class="text-yellow-400 hover:text-yellow-300 underline underline-offset-4">email</a
+      class="text-highlight hover:opacity-80 underline underline-offset-4">email</a
     >. Tell me what you're building or what you're curious about.
   </p>
 </section>

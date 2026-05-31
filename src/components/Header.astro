@@ -12,17 +12,17 @@ const isActive = (href: string) => {
 };
 ---
 
-<header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-10">
+<header class="border-b border-border bg-bg/80 backdrop-blur sticky top-0 z-10">
   <nav class="mx-auto max-w-3xl px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-white font-semibold tracking-tight">Razvan Andrei Surdu</a>
+    <a href="/" class="text-fg font-semibold tracking-tight">Razvan Andrei Surdu</a>
     <ul class="flex items-center gap-5 text-sm">
       {
         navLinks.map((link) => (
           <li>
             <a
               href={link.href}
-              class={`transition-colors hover:text-white ${
-                isActive(link.href) ? 'text-white' : 'text-slate-400'
+              class={`transition-colors hover:text-fg ${
+                isActive(link.href) ? 'text-fg' : 'text-fg-dim'
               }`}
             >
               {link.label}
@@ -30,6 +30,58 @@ const isActive = (href: string) => {
           </li>
         ))
       }
+      <li>
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle color theme"
+          title="Theme: system"
+          class="flex items-center text-fg-dim hover:text-fg transition-colors"
+        >
+          <svg data-icon="system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <svg data-icon="light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg data-icon="dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </li>
     </ul>
   </nav>
 </header>
+
+<style>
+  #theme-toggle svg {
+    display: none;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  #theme-toggle[data-mode="system"] [data-icon="system"],
+  #theme-toggle[data-mode="light"] [data-icon="light"],
+  #theme-toggle[data-mode="dark"] [data-icon="dark"] {
+    display: block;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    var modes = ['system', 'light', 'dark'];
+    function current() {
+      return localStorage.getItem('theme') || 'system';
+    }
+    function apply(mode) {
+      if (mode === 'system') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', mode);
+      }
+      localStorage.setItem('theme', mode);
+      btn.setAttribute('data-mode', mode);
+      btn.title = 'Theme: ' + mode;
+    }
+    apply(current());
+    btn.addEventListener('click', function () {
+      var next = modes[(modes.indexOf(current()) + 1) % modes.length];
+      apply(next);
+    });
+  })();
+</script>

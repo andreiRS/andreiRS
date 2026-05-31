@@ -34,13 +34,13 @@ const formatter = new Intl.DateTimeFormat('en', {
 
   {
     entries.length === 0 ? (
-      <div class="rounded-lg border border-slate-800 bg-slate-800/40 p-6 text-slate-400">
-        <p class="text-slate-300 font-medium">Writing coming soon.</p>
+      <div class="rounded-lg border border-border bg-surface/40 p-6 text-fg-dim">
+        <p class="text-fg-muted font-medium">Writing coming soon.</p>
         <p class="mt-2 text-sm">
           For raw study notes and reading, see my{' '}
           <a
             href="https://razvan-andrei-surdu.eu/"
-            class="text-yellow-400 hover:text-yellow-300 underline underline-offset-4"
+            class="text-highlight hover:opacity-80 underline underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -55,13 +55,13 @@ const formatter = new Intl.DateTimeFormat('en', {
           <li class="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
             <time
               datetime={entry.data.date.toISOString()}
-              class="text-sm text-slate-500 sm:w-32 shrink-0 font-mono"
+              class="text-sm text-fg-faint sm:w-32 shrink-0 font-mono"
             >
               {formatter.format(entry.data.date)}
             </time>
             <a
               href={`/writing/${entry.id}`}
-              class="text-slate-200 hover:text-white transition-colors"
+              class="text-fg hover:text-fg transition-colors"
             >
               {entry.data.title}
             </a>

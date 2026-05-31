@@ -55,7 +55,7 @@ Two separate sites by design:
 ## Conventions
 
 - Contact email used on the page is `andrei@surdu.de` (matches the git user). Hero CTA points to `#projects` (anchor on the homepage); secondary CTA is the email link.
-- The page is dark-only (slate-900 background, slate-200 text). Don't add a theme toggle without asking.
+- The page supports light and dark themes via brand tokens in `src/styles/global.css` (dark is the `:root` default; light applies under `[data-theme="light"]` or, on "system", `prefers-color-scheme: light`). A header toggle (`Header.astro`) cycles system → light → dark and persists the choice to `localStorage`. Colors reference CSS variables (`bg`, `surface`, `border`, `fg`/`fg-muted`/`fg-dim`/`fg-faint`, plus semantic `success`/`info`/`danger`/`highlight`) — don't hard-code hex values in components.
 - Footer year auto-updates via `new Date().getFullYear()` in `Footer.astro`. Don't hard-code it.
 - The `README.md` on `main` renders on the GitHub profile (the `andreiRS/andreiRS` special-repo trick) and is **not** project documentation.
 - Research notes for the redesign live in `research/`. They are reference material, not content shipped to the site.
